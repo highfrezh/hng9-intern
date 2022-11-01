@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/hng9-bio', [Hng9BioController::class, 'hngBio']);
+Route::get('/create-bio', [Hng9BioController::class, 'createHngBio']);
