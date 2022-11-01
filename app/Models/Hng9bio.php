@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Hng9bio extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
 }
