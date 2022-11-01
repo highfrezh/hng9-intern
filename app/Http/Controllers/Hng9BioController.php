@@ -14,7 +14,7 @@ class Hng9BioController extends Controller
             if($bio['backend']==1){
                 $bio['backend']=true;
             }         
+            return response()->json($bio);
         }
-        return response()->json($bio);
     }
 }
