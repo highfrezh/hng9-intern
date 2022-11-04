@@ -30,14 +30,17 @@ class ImportController extends Controller
                 $hash = hash_hmac('sha256', utf8_encode($nft['Filename']), rand(), false);
                 //appending Hash data to the array
                 $nft['Hash'] = $hash;
+                //converting attribute to array
+                $nft['Attributes'] = array_column(array_chunk(preg_split("/[:;]/", $nft['Attributes']), 2), 1, 0);
                 //creating json file for each row
                 $fileName = "nft".$nft['Filename'].'.json';
                 $fileStorePath = public_path('/imports/nfts/'.$fileName);
                 
                 File::put($fileStorePath, json_encode($nft));    
-            }           
-        
+            }
+
             return "NFTs JSON files created successfully!";
+
         }else{
             //rendering a view blade file to import csv file;
             return view('nft_csv');
