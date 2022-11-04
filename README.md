@@ -1,11 +1,7 @@
-# CUSTOMAER AND INVOICES API
+# HNG9 NFT PROJECT
 
 ## Introduction
-This repository contains scripts that can be used to set up the Customer and Invoice API.
-The API allows users to perform CRUD Operation on both Customer and Invoice and also create bulk Invoice. It also allows users to fetch and filter the relatinship between  the customer and Invoice. 
-
-The API documentation is available [here](https://documenter.getpostman.com/view/16161182/2s83zfRREf).
-
+This repository contains scripts that generates a compatible Chip-0007 json file, create a SHA-256 hash for the file and append the hash to a CSV file.
 
 ## Prerequisites
 This API relies on MySQL, PHP 8+ and composer for any meaningful work, so make sure you have all the required libraries installed either locally or remote, depending on your setup. See [https://laravel.com/docs/9.x/installation](https://laravel.com/docs/9.x/installation) for information about setting up Laravel on your machine
@@ -58,6 +54,9 @@ NB: The application port (8000) might be different, check your console to confir
 ````
 $ php artisan serve
 ````
+### Step 6: Upload the csv file
+go to [http://localhost:8000/](http://127.0.0.1:8000/update-nft-csv-file) to upload the csv file;
+the path to the output is given from the response.
 
 
 
