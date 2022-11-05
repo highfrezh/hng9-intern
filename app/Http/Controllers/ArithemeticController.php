@@ -8,7 +8,6 @@ class ArithemeticController extends Controller
 {
     public function arithemetic(Request $request)
     {
-        // if($request->x && $request->y && $request->operation_type){
             //validate data
             $validated = $request->validate([
             'operation_type' => 'required',
@@ -21,23 +20,7 @@ class ArithemeticController extends Controller
             $operation = $request->operation_type;
 
             $result = $this->performOperation($x, $y, $operation);
-            return $result;
-            // return response()->json([
-            //     "slackUsername" => "highfezh",
-            //     "result" => $result,
-            //     "operation_type" => $operation,
-            // ], 200);
-
-        // }elseif($request->operation_type){
-        //     $data = $request->operation_type;            
-        //     // Use preg_match_all() function to check match on $data
-        //     preg_match_all('!\d+!', $data, $matches);
-        //     $x = $matches[0][0];
-        //     $y = $matches[0][1];
-
-        //     $result = $this->performOperationOnString($x, $y, $data);
-        //     return $result;
-        // }        
+            return $result;        
     }
 
     // perform operation if x and y is given
@@ -98,10 +81,5 @@ class ArithemeticController extends Controller
             }
             $data = array($result, $operation);
             return $data;
-            // return response()->json([
-            //     "slackUsername" => "highfezh",
-            //     "result" => $result,
-            //     "operation_type" => $operation,
-            // ], 200);
     }
 }
